@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import freecodecamplogo from "./imagenes/freecodecamp-logo.png";
+import Boton from "./componentes/Boton";
 
 function App() {
+  const manejarClic = () => {
+    console.log("clic");
+  };
+
+  const reiniciarContador = () => {
+    console.log("reiniciar");
+  };
+
   return (
+    //Logo de freecodeCamp
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="freecodecamp-logo-contenedor">
+        <img
+          className="freecodecamp-logo"
+          src={freecodecamplogo}
+          alt="logo de freecodeCamp"
+        ></img>
+      </div>
+      <div className="contenedor-principal">
+        <Boton texto="Clic" esBotonDeClic={true} manejarClic={manejarClic} />
+        <Boton
+          texto="Reiniciar"
+          esBotonDeClic={false}
+          manejarClic={reiniciarContador}
+        />
+      </div>
+
+      {/*Fin de la aplicacion*/}
     </div>
   );
 }
